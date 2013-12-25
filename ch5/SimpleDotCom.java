@@ -5,10 +5,12 @@ public class SimpleDotCom {
     public static void main (String[] args) {
         // Declare int variable to hold number of user guesses.
         // Instantiate a dotcom object
-        // For each dotcom:
-            // Build locations on grid
-
         // Compute a random number between 0 and 4 that will be starting cell position
+        // Make an int array with 3 ints using the randomly generated number
+        // Invoke the setLocationCells method on the instance
+        // Declare a boolean variable representing the state of the game named isAlive
+
+
         // While the dot com is still alive
             // Print "Enter a number"
             // Get user input from the command line
