@@ -3,29 +3,27 @@ public class SimpleDotCom {
     int numOfHits = 0;
 
     public static void main (String[] args) {
-        // Declare int variable to hold number of user guesses.
-        // Instantiate a dotcom object
-        // Compute a random number between 0 and 4 that will be starting cell position
-        // Make an int array with 3 ints using the randomly generated number
-        // Invoke the setLocationCells method on the instance
-        // Declare a boolean variable representing the state of the game named isAlive
+        int numOfGuesses = 0;
+        GameHelper helper = new GameHelper();
 
+        SimpleDotCom theDotCom = new SimpleDotCom();
+        int randomNum = (int) (Math.random() * 5);
 
-        // While the dot com is still alive
-            // Print "Enter a number"
-            // Get user input from the command line
-            // Validate guess
-            // If invalid, re-prompt for new input
-            // Else run checkYourself and see if there's a hit
-            // If there's a hit
-                // Remove that location
-                // If the dot com is dead
-                    // Remove it completely
+        int[] locations = {randomNum, randomNum + 1, randomNum + 2};
+        theDotCom.setLocationCells(locations);
+        boolean isAlive = true;
 
-            // Increment number of guesses way
+        while (isAlive == true) {
+            String guess = helper.getUserInput("enter a number");
+            String result = theDotCom.checkYourself(guess);
+            numOfGuesses++;
+            if (result.equals("kill")) {
+                isAlive = false;
+                System.out.println("You took " + numOfGuesses + " guesses.");
+            } // close if
+        } // close while
+    } // close main
 
-        // When the dot com is dead, print total number of guesses
-    }
     public void setLocationCells(int[] locs) {
         locationCells = locs;
     }
