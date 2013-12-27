@@ -30,6 +30,7 @@ public class DotCom {
             }
         }
 
+        // Return "miss" or "hit" or "kill"
         return result;
     }
 }
