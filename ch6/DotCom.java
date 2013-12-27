@@ -4,7 +4,7 @@ public class DotCom {
     private ArrayList<String> locationCells;
     private String name;
 
-    public void setLocationCells(ArrayList<String> loc) {
+    public void setLocationCells(ArrayList<String> locs) {
         locationCells = locs;
     }
 

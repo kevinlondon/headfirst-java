@@ -42,7 +42,7 @@ public class GameHelper {
         int location = 0;
 
         // nth dot com to place.
-        comCounter++;
+        comCount++;
 
         // Set horizontal increment
         int incr = 1;

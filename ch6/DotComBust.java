@@ -2,7 +2,7 @@ import java.util.*;
 
 public class DotComBust {
     private GameHelper helper = new GameHelper();
-    private ArrayList<DotCom> dotComsList = newArrayList<DotCom>();
+    private ArrayList<DotCom> dotComsList = new ArrayList<DotCom>();
     private int numOfGuesses = 0;
 
     private void setUpGame() {
@@ -18,8 +18,10 @@ public class DotComBust {
         dotComsList.add(three);
 
         System.out.println("Your goal is to sink three dot coms.");
-        System.out.println(one.getName + ", " + two.getName + ", " + three.getName());
-        System.out.println("Try to sink them all in the fewest number of guesses.");
+        System.out.println(one.getName() + ", " + two.getName() + ", " + three.getName());
+        System.out.println("Try to sink them all in the fewest rnumber of guesses.");
+        System.out.println("Please enter a letter from A to H, followed by a number from 1 to 7.")
+        System.out.println("For example, A3 or H5");
 
         for (DotCom dotComToSet : dotComsList) {
             ArrayList<String> newLocation = helper.placeDotCom(3);
