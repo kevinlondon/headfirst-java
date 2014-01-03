@@ -1,0 +1,4 @@
+class MyEx extends Exception {
+
+}
+
