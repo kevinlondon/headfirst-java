@@ -5,10 +5,10 @@ public class ExTestDrive {
         System.out.print("t");
         try {
             doRisky(test);
-            System.out.print("a");
-        } catch (MyEx e) {
             System.out.print("r");
             System.out.print("o");
+        } catch (MyEx e) {
+            System.out.print("a");
         } finally {
             System.out.print("w");
             System.out.println("s");
