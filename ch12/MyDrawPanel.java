@@ -14,9 +14,16 @@ class MyDrawPanel extends JPanel {
 
     // Do not call directly. Handled by Java.
     public void paintComponent(Graphics g) {
-        Image image = new ImageIcon("pumpkin.jpg").getImage();
-        // Param 1 and 2 are x and y coordinates. 3 from left, 4 from top.
-        // Always relative to the widget and not the entire frame.
-        g.drawImage(image, 3, 4, this);
+        // fill entire panel with black
+        g.fillRect(0,0, this.getWidth(), this.getHeight());
+        int red = (int) (Math.random() * 255);
+        int green = (int) (Math.random() * 255);
+        int blue = (int) (Math.random() * 255);
+
+        // Make color based on random values rolled above.
+        Color randomColor = new Color(red, green, blue);
+        g.setColor(randomColor);
+        // Start 70 px from left, 70 px from top, 100 x 100 dimensions
+        g.fillOval(70,70,100,100);
     }
 }
