@@ -14,16 +14,24 @@ class MyDrawPanel extends JPanel {
 
     // Do not call directly. Handled by Java.
     public void paintComponent(Graphics g) {
-        // fill entire panel with black
-        g.fillRect(0,0, this.getWidth(), this.getHeight());
+        // Cast it so we can access G2D methods
+        Graphics2D g2d = (Graphics2D) g;
+        // Starting point, color, gradient point, color.
+
+        Color startColor = MyDrawPanel.makeRandomColor();
+        Color endColor = MyDrawPanel.makeRandomColor();
+        GradientPaint gradient = new GradientPaint(70,70,startColor,150,150,endColor);
+        // Set virtual paint brush to a gradient instead of solid color.
+        g2d.setPaint(gradient);
+        // Fill oval with whatever is loaded on to the paintbrush
+        g2d.fillOval(70,70,100,100);
+    }
+
+    public static Color makeRandomColor() {
         int red = (int) (Math.random() * 255);
         int green = (int) (Math.random() * 255);
         int blue = (int) (Math.random() * 255);
 
-        // Make color based on random values rolled above.
-        Color randomColor = new Color(red, green, blue);
-        g.setColor(randomColor);
-        // Start 70 px from left, 70 px from top, 100 x 100 dimensions
-        g.fillOval(70,70,100,100);
+        return new Color(red, green, blue);
     }
 }
