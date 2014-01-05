@@ -14,8 +14,9 @@ class MyDrawPanel extends JPanel {
 
     // Do not call directly. Handled by Java.
     public void paintComponent(Graphics g) {
-        // Tell shape to fill itself with this color and be this size.
-        g.setColor(Color.orange);
-        g.fillRect(20, 50, 100, 100);
+        Image image = new ImageIcon("pumpkin.jpg").getImage();
+        // Param 1 and 2 are x and y coordinates. 3 from left, 4 from top.
+        // Always relative to the widget and not the entire frame.
+        g.drawImage(image, 3, 4, this);
     }
 }
