@@ -14,7 +14,7 @@ public class SimpleGui1B implements ActionListener {
         button = new JButton("Click me");
 
         // Register interest with the button. Add to list of listeners.
-        button.addActonListener(this);
+        button.addActionListener(this);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(button);
