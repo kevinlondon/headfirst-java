@@ -64,7 +64,6 @@ public class BeatBox {
 
         theFrame.getContentPane().add(background);
         GridLayout grid = new GridLayout(16, 16);
-        grid.setVgap(1);
         grid.setHgap(2);
         mainPanel = new JPanel(grid);
         background.add(BorderLayout.CENTER, mainPanel);
