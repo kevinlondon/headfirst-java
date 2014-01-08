@@ -33,6 +33,6 @@ public class TextArea1 implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ev) {
-        text.append("Button clicked\n ");
+        text.append("Button clicked.\n");
     }
 }
