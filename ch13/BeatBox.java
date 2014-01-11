@@ -192,4 +192,28 @@ public class BeatBox {
         return event;
     }
 
+    public class MySendListener implements ActionListener {
+
+        public void actionPerformed(ActionEvent a) {
+            // Make a boolean array to hold the state of each checkbox
+            boolean[] checkBoxState = new boolean[256];
+
+            for (int i = 0; i < 256; i++) {
+                // Walk through checkbox list and get state of each one.
+                JCheckBox check = (JCheckBox) checkBoxList.get(i);
+                if (check.isSelected()) {
+                    checkBoxState[i] = true;
+                }
+            }
+
+            try {
+                FileOutputStream fileStream = new FileOutputStream(new File("Checkbox.ser"));
+                ObjectOutputStream os = new ObjectOutputStream(fileStream);
+                os.writeObject(checkBoxState);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
 }
