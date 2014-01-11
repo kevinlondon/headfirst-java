@@ -216,4 +216,30 @@ public class BeatBox {
         }
     }
 
+    public class MyReadInListener implements ActionListener {
+
+        public void actionPerformed(ActionEvent a) {
+            boolean[] checkBoxState = null;
+            try {
+                FileInputStream fileIn = new FileInputStream(new File("Checkbox.ser"));
+                ObjectInputStream is = new ObjectInputStream(fileIn);
+                // Read single object and cast it back to boolean array
+                checkBoxState = (boolean[]) is.readObject();
+            } catch (Exception ex) {ex.printStackTrace();}
+
+            for (int i = 0; i < 256; i++) {
+                JCheckBox check = (JCheckBox) checkBoxList.get(i);
+                // Restore state of each checkbox
+                if (checkBoxState[i]) {
+                    check.setSelected(true);
+                } else {
+                    check.setSelected(false);
+                }
+            }
+
+            // Stop currently playing song, start again
+            sequencer.stop();
+            buildTrackAndStart();
+        }
+    }
 }
