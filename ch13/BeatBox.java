@@ -55,6 +55,14 @@ public class BeatBox {
         downTempo.addActionListener(new MyDownTempoListener());
         buttonBox.add(downTempo);
 
+        JButton saveBeats = new JButton("Save Beats");
+        saveBeats.addActionListener(new MySendListener());
+        buttonBox.add(saveBeats);
+
+        JButton loadBeats = new JButton("Load Beats");
+        loadBeats.addActionListener(new MyReadInListener());
+        buttonBox.add(loadBeats);
+
         Box nameBox = new Box(BoxLayout.Y_AXIS);
         for (int i = 0; i < 16; i++) {
             nameBox.add(new Label(instrumentNames[i]));
