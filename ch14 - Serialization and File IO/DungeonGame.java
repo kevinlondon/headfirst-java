@@ -24,6 +24,7 @@ class DungeonGame implements Serializable {
             FileInputStream fis = new FileInputStream("dg.ser");
             ObjectInputStream ois = new ObjectInputStream(fis);
             d = (DungeonGame) ois.readObject();
+            ois.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
