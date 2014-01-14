@@ -17,10 +17,15 @@ public class RyanAndMonicaExample implements Runnable {
             if (account.getBalance() < 0) {
                 System.out.println("Overdrawn!");
             }
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
         }
     }
 
-    private void makeWithdrawl(int amount) {
+    private synchronized void makeWithdrawl(int amount) {
         String name = Thread.currentThread().getName();
         if (account.getBalance() >= amount) {
             System.out.println(name + " will withdraw.");
