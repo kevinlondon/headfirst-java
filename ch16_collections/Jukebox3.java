@@ -21,7 +21,7 @@ public class Jukebox3 {
             File file = new File("SongListMore.txt");
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line = null;
-            while ((line = reader.getLine()) != null) {
+            while ((line = reader.readLine()) != null) {
                 addSong(line);
             }
         } catch (Exception ex) {
