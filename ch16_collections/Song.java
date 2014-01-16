@@ -4,6 +4,17 @@ class Song implements Comparable<Song>{
     String rating;
     String bpm;
 
+
+    public boolean equals(Object aSong) {
+        Song a = (Song) aSong;
+        // Title is a String, so it already has an equals method.
+        return getTitle().equals(a.getTitle());
+    }
+
+    public int hashCode() {
+        return title.hashCode();
+    }
+
     public int compareTo(Song s) {
         return title.compareTo(s.getTitle());
     }
