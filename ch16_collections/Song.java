@@ -33,6 +33,6 @@ class Song implements Comparable<Song>{
 
     public String toString() {
         // Override toString() so we see the title when printing a list.
-        return title;
+        return artist + ": " + title;
     }
 }
